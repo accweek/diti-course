@@ -10,6 +10,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
+<?import ru.diti.converter.enums.Currency?>
 <GridPane fx:controller="ru.diti.converter.controller.ConverterController"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
           stylesheets="../css/main.css">
@@ -23,26 +24,32 @@
 
     <Label text="From" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
     <ComboBox fx:id="currencyFrom"
-              GridPane.columnIndex="1" GridPane.rowIndex="1" promptText="USD" minWidth="150" value="USD">
+              GridPane.columnIndex="1" GridPane.rowIndex="1" minWidth="150">
         <items>
             <FXCollections fx:factory="observableArrayList">
-                <String fx:value="USD"/>
-                <String fx:value="EUR"/>
-                <String fx:value="RUR"/>
+                <Currency fx:value="USD"/>
+                <Currency fx:value="EUR"/>
+                <Currency fx:value="RUR"/>
             </FXCollections>
         </items>
+        <value>
+            <Currency fx:value="USD"/>
+        </value>
     </ComboBox>
 
     <Label text="To" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
     <ComboBox fx:id="currencyTo"
-              GridPane.columnIndex="4" GridPane.rowIndex="1" promptText="RUR" minWidth="150" value="RUR">
+              GridPane.columnIndex="4" GridPane.rowIndex="1" minWidth="150">
         <items>
             <FXCollections fx:factory="observableArrayList">
-                <String fx:value="USD"/>
-                <String fx:value="EUR"/>
-                <String fx:value="RUR"/>
+                <Currency fx:value="USD"/>
+                <Currency fx:value="EUR"/>
+                <Currency fx:value="RUR"/>
             </FXCollections>
         </items>
+        <value>
+            <Currency fx:value="RUR"/>
+        </value>
     </ComboBox>
 
     <Label text="Value" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
